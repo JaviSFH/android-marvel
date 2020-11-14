@@ -7,4 +7,7 @@ ext {
     navigation_version = "2.3.1"
     livedata_version = "2.2.0"
     viewmodel_version = "2.2.0"
+    retrofit_version = "2.9.0"
+    okhttp3_version = "4.9.0"
+    moshi_version = "1.11.0"
 }

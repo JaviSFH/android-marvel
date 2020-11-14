@@ -43,6 +43,8 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    
+    // Android dependencies
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.core:core-ktx:$core_kts_version"
     implementation "androidx.appcompat:appcompat:$app_compat_version"
@@ -52,7 +54,12 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$livedata_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version"
 
-    // Test implementations
+    // Network dependencies
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
+    implementation("com.squareup.moshi:moshi:$moshi_version")
+    
+    // Test dependencies
     testImplementation "junit:junit:4.13.1"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
