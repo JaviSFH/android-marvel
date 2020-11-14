@@ -1,7 +1,8 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
+    id "com.android.application"
+    id "kotlin-android"
     id "kotlin-kapt"
+    id "dagger.hilt.android.plugin"
     id "androidx.navigation.safeargs.kotlin"
 }
 
@@ -28,6 +29,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 
     compileOptions {
@@ -43,7 +45,7 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    
+
     // Android dependencies
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.core:core-ktx:$core_kts_version"
@@ -56,11 +58,21 @@ dependencies {
 
     // Network dependencies
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
-    implementation("com.squareup.moshi:moshi:$moshi_version")
-    
+
+    // Dependency Injection dependencies
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_compiler_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_compiler_version"
+
+    // Image dependencies
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
     // Test dependencies
     testImplementation "junit:junit:4.13.1"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation "androidx.test.ext:junit:1.1.2"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
 }

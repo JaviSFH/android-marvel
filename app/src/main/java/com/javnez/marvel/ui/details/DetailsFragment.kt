@@ -4,24 +4,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.javnez.marvel.R
+import androidx.fragment.app.viewModels
+import com.javnez.marvel.core.BaseFragment
+import com.javnez.marvel.databinding.DetailsFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class DetailsFragment : Fragment() {
+@AndroidEntryPoint
+class DetailsFragment : BaseFragment() {
 
-    private lateinit var viewModel: DetailsViewModel
+    private val viewModel: DetailsViewModel by viewModels()
+    private lateinit var binding: DetailsFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.details_fragment, container, false)
+        binding = DetailsFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun setupUi() {
+        //TODO
+    }
+
+    override fun setupObservers() {
+        //TODO
     }
 }

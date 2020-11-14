@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_default_padding">16dp</dimen>
+
+    <dimen name="text_size_16">16sp</dimen>
+
+    <dimen name="card_size">200dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+
+
+</resources>

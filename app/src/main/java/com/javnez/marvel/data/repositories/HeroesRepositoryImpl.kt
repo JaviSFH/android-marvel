@@ -1,7 +1,7 @@
 package com.javnez.marvel.data.repositories
 
-import com.javnez.marvel.data.repositories.datasources.LocalDataSource
-import com.javnez.marvel.data.repositories.datasources.NetworkDataSource
+import com.javnez.marvel.data.repositories.datasource.LocalDataSource
+import com.javnez.marvel.data.repositories.datasource.NetworkDataSource
 import com.javnez.marvel.domain.repositories.HeroesRepository
 
 class HeroesRepositoryImpl(
