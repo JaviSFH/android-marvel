@@ -17,6 +17,8 @@ class OverviewViewModel @ViewModelInject constructor(private val getHeroesUseCas
     val state: LiveData<OverviewState> get() = _state
 
     fun loadCharacters() {
+        if (_state.value != null) return
+
         _state.value = OverviewState.Loading
         getHeroesUseCase(None()) {
             when (it) {

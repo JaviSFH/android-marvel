@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.javnez.marvel.R
 import com.javnez.marvel.core.BaseFragment
 import com.javnez.marvel.data.model.Characters
 import com.javnez.marvel.databinding.OverviewFragmentBinding
@@ -59,6 +58,7 @@ class OverviewFragment : BaseFragment() {
     }
 
     private fun navigateToDetails(character: Characters) {
-        findNavController().navigate(R.id.action_overviewFragment_to_detailsFragment)
+        val action = OverviewFragmentDirections.nextAction(character)
+        findNavController().navigate(action)
     }
 }
