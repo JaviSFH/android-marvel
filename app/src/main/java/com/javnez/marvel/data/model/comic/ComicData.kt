@@ -1,11 +1,10 @@
-package com.javnez.marvel.data.model
+package com.javnez.marvel.data.model.comic
 
 import androidx.annotation.Keep
 import com.squareup.moshi.Json
-import java.io.Serializable
 
 @Keep
-data class CharacterData(
+data class ComicData(
     @Json(name = "count")
     val count: Int? = 0,
     @Json(name = "limit")
@@ -13,10 +12,7 @@ data class CharacterData(
     @Json(name = "offset")
     val offset: Int? = 0,
     @Json(name = "results")
-    val results: List<Characters> = emptyList(),
+    val results: List<Comic>? = emptyList(),
     @Json(name = "total")
     val total: Int? = 0
-): Serializable
-
-
-
+)

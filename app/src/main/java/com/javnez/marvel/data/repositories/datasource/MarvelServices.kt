@@ -1,6 +1,6 @@
 package com.javnez.marvel.data.repositories.datasource
 
-import com.javnez.marvel.data.model.CharacterResult
+import com.javnez.marvel.data.model.character.CharacterResult
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

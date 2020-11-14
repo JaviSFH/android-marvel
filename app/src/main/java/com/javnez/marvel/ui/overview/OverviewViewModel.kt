@@ -8,7 +8,7 @@ import com.javnez.marvel.core.Failure
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
 import com.javnez.marvel.core.UseCase.None
-import com.javnez.marvel.data.model.Characters
+import com.javnez.marvel.data.model.character.Characters
 import com.javnez.marvel.domain.usecase.GetHeroesUseCase
 
 class OverviewViewModel @ViewModelInject constructor(private val getHeroesUseCase: GetHeroesUseCase) : ViewModel() {

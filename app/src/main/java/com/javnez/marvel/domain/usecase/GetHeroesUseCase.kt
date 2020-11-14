@@ -3,7 +3,7 @@ package com.javnez.marvel.domain.usecase
 import com.javnez.marvel.core.Result
 import com.javnez.marvel.core.UseCase
 import com.javnez.marvel.core.UseCase.None
-import com.javnez.marvel.data.model.Characters
+import com.javnez.marvel.data.model.character.Characters
 import com.javnez.marvel.data.repositories.CharactersRepository
 import javax.inject.Inject
 

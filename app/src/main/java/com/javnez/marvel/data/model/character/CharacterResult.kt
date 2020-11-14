@@ -1,4 +1,4 @@
-package com.javnez.marvel.data.model
+package com.javnez.marvel.data.model.character
 
 import androidx.annotation.Keep
 import com.squareup.moshi.Json

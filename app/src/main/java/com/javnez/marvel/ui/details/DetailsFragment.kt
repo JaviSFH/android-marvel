@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.javnez.marvel.core.BaseFragment
-import com.javnez.marvel.data.model.Characters
+import com.javnez.marvel.data.model.character.Characters
 import com.javnez.marvel.databinding.DetailsFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 

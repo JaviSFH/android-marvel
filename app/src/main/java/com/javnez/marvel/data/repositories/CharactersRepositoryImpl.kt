@@ -5,7 +5,7 @@ import com.javnez.marvel.core.NetworkUtils
 import com.javnez.marvel.core.Result
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
-import com.javnez.marvel.data.model.Characters
+import com.javnez.marvel.data.model.character.Characters
 import com.javnez.marvel.data.repositories.datasource.LocalDataSource
 import com.javnez.marvel.data.repositories.datasource.NetworkDataSource
 import javax.inject.Inject

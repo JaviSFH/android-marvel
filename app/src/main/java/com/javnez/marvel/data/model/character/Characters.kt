@@ -1,6 +1,7 @@
-package com.javnez.marvel.data.model
+package com.javnez.marvel.data.model.character
 
 import androidx.annotation.Keep
+import com.javnez.marvel.data.model.Thumbnail
 import com.squareup.moshi.Json
 import java.io.Serializable
 
