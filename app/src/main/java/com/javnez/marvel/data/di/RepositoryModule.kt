@@ -1,7 +1,7 @@
 package com.javnez.marvel.data.di
 
 import com.javnez.marvel.core.MarvelNetworkInterceptor
-import com.javnez.marvel.data.repositories.datasource.MarvelOperations
+import com.javnez.marvel.data.repositorie.MarvelOperations
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

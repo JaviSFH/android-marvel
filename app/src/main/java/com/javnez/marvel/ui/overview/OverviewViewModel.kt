@@ -9,9 +9,9 @@ import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
 import com.javnez.marvel.core.UseCase.None
 import com.javnez.marvel.data.model.character.Characters
-import com.javnez.marvel.domain.usecase.GetHeroesUseCase
+import com.javnez.marvel.domain.usecase.GetCharactersUseCase
 
-class OverviewViewModel @ViewModelInject constructor(private val getHeroesUseCase: GetHeroesUseCase) : ViewModel() {
+class OverviewViewModel @ViewModelInject constructor(private val getCharactersUseCase: GetCharactersUseCase) : ViewModel() {
 
     private val _state: MutableLiveData<OverviewState> = MutableLiveData()
     val state: LiveData<OverviewState> get() = _state
@@ -20,7 +20,7 @@ class OverviewViewModel @ViewModelInject constructor(private val getHeroesUseCas
         if (_state.value != null) return
 
         _state.value = OverviewState.Loading
-        getHeroesUseCase(None()) {
+        getCharactersUseCase(None()) {
             when (it) {
                 is Success -> handleSuccess(it.data)
                 is Error -> handleError(it.failure)

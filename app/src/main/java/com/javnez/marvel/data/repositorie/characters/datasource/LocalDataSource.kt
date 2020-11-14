@@ -1,4 +1,4 @@
-package com.javnez.marvel.data.repositories.datasource
+package com.javnez.marvel.data.repositorie.characters.datasource
 
 import com.javnez.marvel.core.Result
 import com.javnez.marvel.data.model.character.Characters
