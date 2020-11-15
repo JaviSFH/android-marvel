@@ -1,9 +1,16 @@
 package com.javnez.marvel.ui.details
 
+import android.app.Dialog
+import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -39,6 +46,7 @@ class DetailsFragment : BaseFragment() {
         binding.apply {
             characterModel = character
             toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+            adapter.setOnImageClickListener { showImage(it) }
             recyclerViewComics.adapter = adapter
         }
     }
@@ -62,5 +70,16 @@ class DetailsFragment : BaseFragment() {
         })
 
         viewModel.loadComics(character.id)
+    }
+
+    private fun showImage(bitmap: Bitmap) {
+
+        val imageView = ImageView(requireContext()).apply { setImageBitmap(bitmap) }
+        Dialog(requireContext()).apply {
+            requestWindowFeature(Window.FEATURE_NO_TITLE)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            addContentView(imageView, RelativeLayout.LayoutParams(1000, 1200))
+            setCanceledOnTouchOutside(true)
+        }.show()
     }
 }

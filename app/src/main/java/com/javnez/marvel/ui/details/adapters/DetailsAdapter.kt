@@ -1,7 +1,9 @@
 package com.javnez.marvel.ui.details.adapters
 
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,12 +13,18 @@ import com.javnez.marvel.ui.details.adapters.DetailsAdapter.ComicViewHolder
 
 class DetailsAdapter : ListAdapter<Comic, ComicViewHolder>(ComicDiffCallback()) {
 
+    private var listener: ((Bitmap) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComicViewHolder {
         return ComicViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: ComicViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), listener)
+    }
+
+    fun setOnImageClickListener(listener: (Bitmap) -> Unit) {
+        this.listener = listener
     }
 
     class ComicViewHolder(private val binding: DetailsItemFragmentBinding) :
@@ -30,9 +38,10 @@ class DetailsAdapter : ListAdapter<Comic, ComicViewHolder>(ComicDiffCallback()) 
             }
         }
 
-        fun bind(comic: Comic) {
+        fun bind(comic: Comic, listener: ((Bitmap) -> Unit)?) {
             binding.apply {
                 model = comic
+                imageComic.setOnClickListener { listener?.invoke(imageComic.drawable.toBitmap()) }
             }
         }
     }

@@ -6,6 +6,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="model"
             type="com.javnez.marvel.data.model.comic.Comic"
@@ -18,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:elevation="2dp"
+        android:elevation="6dp"
         app:cardCornerRadius="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,67 +31,78 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="8dp"
             >
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageComic"
                 android:layout_width="120dp"
                 android:layout_height="180dp"
                 android:importantForAccessibility="no"
                 android:scaleType="centerCrop"
-                app:cardCornerRadius="4dp"
                 app:imageUrl="@{model.thumbnail.path + '.' + model.thumbnail.extension}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageView"
                 tools:background="@android:color/darker_gray"
                 tools:ignore="HardcodedText"
                 tools:layout_height="180dp"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:ellipsize="end"
                 android:gravity="start"
-                android:lines="1"
-                android:paddingVertical="8dp"
+                android:maxLines="2"
+                android:paddingBottom="4dp"
                 android:text="@{model.title}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_16"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageComic"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Title"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/description"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:ellipsize="end"
-                android:text="@{model.description}"
+                android:htmlText="@{model.description}"
                 android:textSize="@dimen/text_size_14"
                 app:layout_constraintBottom_toTopOf="@+id/isbn"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageComic"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/title"
                 tools:text="Description"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/isbn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
                 android:text="@{model.isbn}"
                 android:textSize="@dimen/text_size_14"
+                android:visibility="@{model.isbn.length() > 0 ? View.VISIBLE : View.INVISIBLE}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageComic"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
                 tools:text="ISBN"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="140dp"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
