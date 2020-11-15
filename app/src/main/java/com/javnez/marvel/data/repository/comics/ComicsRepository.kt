@@ -1,7 +1,5 @@
 package com.javnez.marvel.data.repository.comics
 
-import com.javnez.marvel.core.Failure.NetworkConnection
-import com.javnez.marvel.core.NetworkUtils
 import com.javnez.marvel.core.Result
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
@@ -11,13 +9,11 @@ import com.javnez.marvel.data.repository.comics.datasource.NetworkDataSource
 import javax.inject.Inject
 
 class ComicsRepository @Inject constructor(
-    private val networkUtils: NetworkUtils,
     private val networkDataSource: NetworkDataSource,
     private val localDataSource: LocalDataSource
 ) {
 
     suspend fun getComics(characterId: Int): Result<List<Comic>> {
-        if (!networkUtils.isNetworkAvailable()) return Error(NetworkConnection)
 
         return when (val result = networkDataSource.getComics(characterId)) {
             is Success -> {
