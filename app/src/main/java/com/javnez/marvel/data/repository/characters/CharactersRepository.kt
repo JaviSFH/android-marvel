@@ -1,4 +1,4 @@
-package com.javnez.marvel.data.repositorie.characters
+package com.javnez.marvel.data.repository.characters
 
 import com.javnez.marvel.core.Failure.NetworkConnection
 import com.javnez.marvel.core.NetworkUtils
@@ -6,8 +6,8 @@ import com.javnez.marvel.core.Result
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
 import com.javnez.marvel.data.model.character.Character
-import com.javnez.marvel.data.repositorie.characters.datasource.LocalDataSource
-import com.javnez.marvel.data.repositorie.characters.datasource.NetworkDataSource
+import com.javnez.marvel.data.repository.characters.datasource.LocalDataSource
+import com.javnez.marvel.data.repository.characters.datasource.NetworkDataSource
 import javax.inject.Inject
 
 class CharactersRepository @Inject constructor(

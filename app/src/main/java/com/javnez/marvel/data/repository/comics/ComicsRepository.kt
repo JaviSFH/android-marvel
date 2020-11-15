@@ -1,4 +1,4 @@
-package com.javnez.marvel.data.repositorie.comics
+package com.javnez.marvel.data.repository.comics
 
 import com.javnez.marvel.core.Failure.NetworkConnection
 import com.javnez.marvel.core.NetworkUtils
@@ -6,8 +6,8 @@ import com.javnez.marvel.core.Result
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
 import com.javnez.marvel.data.model.comic.Comic
-import com.javnez.marvel.data.repositorie.comics.datasource.LocalDataSource
-import com.javnez.marvel.data.repositorie.comics.datasource.NetworkDataSource
+import com.javnez.marvel.data.repository.comics.datasource.LocalDataSource
+import com.javnez.marvel.data.repository.comics.datasource.NetworkDataSource
 import javax.inject.Inject
 
 class ComicsRepository @Inject constructor(

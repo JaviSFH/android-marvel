@@ -1,9 +1,9 @@
-package com.javnez.marvel.data.repositorie.comics.datasource
+package com.javnez.marvel.data.repository.comics.datasource
 
 import com.javnez.marvel.core.Failure.ServerError
 import com.javnez.marvel.core.Result
 import com.javnez.marvel.data.model.comic.Comic
-import com.javnez.marvel.data.repositorie.MarvelOperations
+import com.javnez.marvel.data.repository.MarvelOperations
 import javax.inject.Inject
 
 class NetworkDataSource @Inject constructor(private val operations: MarvelOperations) {
