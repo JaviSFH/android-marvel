@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.javnez.marvel.core.Failure
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
@@ -20,7 +21,7 @@ class OverviewViewModel @ViewModelInject constructor(private val getCharactersUs
         if (_state.value != null) return
 
         _state.value = OverviewState.Loading
-        getCharactersUseCase(None()) {
+        getCharactersUseCase(viewModelScope, None()) {
             when (it) {
                 is Success -> handleSuccess(it.data)
                 is Error -> handleError(it.failure)

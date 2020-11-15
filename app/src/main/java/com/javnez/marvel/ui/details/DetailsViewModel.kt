@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
 import com.javnez.marvel.data.model.comic.Comic
@@ -21,7 +22,7 @@ class DetailsViewModel @ViewModelInject constructor(private val getComicsUseCase
 
         _state.value = DetailsState.Loading
 
-        getComicsUseCase(Params(characterId)) {
+        getComicsUseCase(viewModelScope, Params(characterId)) {
             when (it) {
                 is Success -> handleSuccess(it.data)
                 is Error -> handleError()
