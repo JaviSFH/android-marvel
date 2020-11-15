@@ -3,9 +3,10 @@ package com.javnez.marvel.ui.overview
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.javnez.marvel.core.BaseFragment
 import com.javnez.marvel.data.model.character.Character
@@ -39,17 +40,20 @@ class OverviewFragment : BaseFragment() {
 
     override fun setupObservers() {
 
-        viewModel.state.observe(viewLifecycleOwner, Observer { state ->
+        viewModel.state.observe(viewLifecycleOwner, { state ->
             when (state) {
                 Loading -> {
-                    //TODO Show progress
+                    binding.shimmerLayout.visibility = VISIBLE
                 }
                 is Success -> {
-                    //TODO Hide progress and set adapter
+                    binding.shimmerLayout.apply {
+                        stopShimmer()
+                        visibility = GONE
+                    }
                     adapter.submitList(state.characters)
                 }
                 Error -> {
-                    //TODO Hide progress and show error
+                    binding.shimmerLayout.hideShimmer()
                     showGenericError()
                 }
             }

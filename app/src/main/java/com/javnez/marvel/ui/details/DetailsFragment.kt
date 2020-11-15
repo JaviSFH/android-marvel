@@ -7,12 +7,13 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.javnez.marvel.core.BaseFragment
@@ -53,17 +54,20 @@ class DetailsFragment : BaseFragment() {
 
     override fun setupObservers() {
 
-        viewModel.state.observe(viewLifecycleOwner, Observer { state ->
+        viewModel.state.observe(viewLifecycleOwner, { state ->
             when (state) {
                 Loading -> {
-                    //TODO Show progress
+                    binding.shimmerLayout.visibility = VISIBLE
                 }
                 is Success -> {
-                    //TODO Hide progress and set data
+                    binding.shimmerLayout.apply {
+                        stopShimmer()
+                        visibility = GONE
+                    }
                     adapter.submitList(state.comics)
                 }
                 Error -> {
-                    //TODO Hide progress and show error
+                    binding.shimmerLayout.hideShimmer()
                     showGenericError()
                 }
             }
