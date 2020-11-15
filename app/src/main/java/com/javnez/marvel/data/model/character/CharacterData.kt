@@ -13,7 +13,7 @@ data class CharacterData(
     @Json(name = "offset")
     val offset: Int? = 0,
     @Json(name = "results")
-    val results: List<Characters> = emptyList(),
+    val results: List<Character> = emptyList(),
     @Json(name = "total")
     val total: Int? = 0
 ): Serializable

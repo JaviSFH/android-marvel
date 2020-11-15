@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.javnez.marvel.core.BaseFragment
-import com.javnez.marvel.data.model.character.Characters
+import com.javnez.marvel.data.model.character.Character
 import com.javnez.marvel.databinding.OverviewFragmentBinding
 import com.javnez.marvel.ui.overview.OverviewState.Error
 import com.javnez.marvel.ui.overview.OverviewState.Loading
@@ -57,7 +57,7 @@ class OverviewFragment : BaseFragment() {
         viewModel.loadCharacters()
     }
 
-    private fun navigateToDetails(character: Characters) {
+    private fun navigateToDetails(character: Character) {
         val action = OverviewFragmentDirections.nextAction(character)
         findNavController().navigate(action)
     }

@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.javnez.marvel.core.BaseFragment
-import com.javnez.marvel.data.model.character.Characters
+import com.javnez.marvel.data.model.character.Character
 import com.javnez.marvel.databinding.DetailsFragmentBinding
 import com.javnez.marvel.ui.details.DetailsState.Error
 import com.javnez.marvel.ui.details.DetailsState.Loading
@@ -21,7 +21,7 @@ class DetailsFragment : BaseFragment() {
 
     private val viewModel: DetailsViewModel by viewModels()
     private lateinit var binding: DetailsFragmentBinding
-    private lateinit var character: Characters
+    private lateinit var character: Character
     private val adapter = DetailsAdapter()
 
     override fun onCreateView(

@@ -8,7 +8,7 @@ import com.javnez.marvel.core.Failure
 import com.javnez.marvel.core.Result.Error
 import com.javnez.marvel.core.Result.Success
 import com.javnez.marvel.core.UseCase.None
-import com.javnez.marvel.data.model.character.Characters
+import com.javnez.marvel.data.model.character.Character
 import com.javnez.marvel.domain.usecase.GetCharactersUseCase
 
 class OverviewViewModel @ViewModelInject constructor(private val getCharactersUseCase: GetCharactersUseCase) : ViewModel() {
@@ -28,7 +28,7 @@ class OverviewViewModel @ViewModelInject constructor(private val getCharactersUs
         }
     }
 
-    private fun handleSuccess(characters: List<Characters>) {
+    private fun handleSuccess(characters: List<Character>) {
         _state.value = OverviewState.Success(characters)
     }
 

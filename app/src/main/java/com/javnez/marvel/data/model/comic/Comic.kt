@@ -2,13 +2,13 @@ package com.javnez.marvel.data.model.comic
 
 import androidx.annotation.Keep
 import com.javnez.marvel.data.model.Thumbnail
-import com.javnez.marvel.data.model.character.Characters
+import com.javnez.marvel.data.model.character.Character
 import com.squareup.moshi.Json
 
 @Keep
 data class Comic(
     @Json(name = "characters")
-    val characters: Characters?,
+    val character: Character?,
     @Json(name = "collectedIssues")
     val collectedIssues: List<Any>? = listOf(),
     @Json(name = "collections")

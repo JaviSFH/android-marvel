@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
 import java.io.Serializable
 
 @Keep
-data class Characters(
+data class Character(
     @Json(name = "id")
     val id: Int?,
     @Json(name = "name")
