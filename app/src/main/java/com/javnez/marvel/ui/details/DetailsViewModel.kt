@@ -17,6 +17,7 @@ class DetailsViewModel @ViewModelInject constructor(private val getComicsUseCase
     val state: LiveData<DetailsState> get() = _state
 
     fun loadComics(characterId: Int?) {
+
         if (_state.value != null) return
         if (characterId == null) return handleError()
 
