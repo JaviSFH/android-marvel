@@ -56,6 +56,7 @@ class DetailsFragment : BaseFragment() {
                 }
                 Error -> {
                     //TODO Hide progress and show error
+                    showGenericError()
                 }
             }
         })

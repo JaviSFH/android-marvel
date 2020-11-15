@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Marvel</string>
     <string name="marvel_characters">Marvel characters</string>
+    <string name="generic_error">Cannot retrieve information. Check your connection and try again</string>
 </resources>

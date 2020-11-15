@@ -50,6 +50,7 @@ class OverviewFragment : BaseFragment() {
                 }
                 Error -> {
                     //TODO Hide progress and show error
+                    showGenericError()
                 }
             }
         })
