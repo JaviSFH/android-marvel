@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.javnez.marvel.core.BaseFragment
 import com.javnez.marvel.data.model.character.Character
@@ -35,8 +36,11 @@ class DetailsFragment : BaseFragment() {
     }
 
     override fun setupUi() {
-        binding.recyclerViewComics.adapter = adapter
-        activity?.title = character.name
+        binding.apply {
+            characterModel = character
+            toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+            recyclerViewComics.adapter = adapter
+        }
     }
 
     override fun setupObservers() {
