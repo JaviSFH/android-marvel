@@ -10,6 +10,10 @@ Within each feature module (at the present time only `app`), I've followed a cle
 - **domain:** business logic which is represented by _Use cases_. The _Use case_ will be in charge of changing the thread. For this purpose I have used [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html). The _Use case_ will always return the _Result_ in the _UIThread_.
 - **data**: it is the app repository. All the data managed by the application is retrieved from this layer. Based on the _Repository pattern_ I got a couple of data sources, one for the network and other for local storage (database).
 
+
+![Architecture diagram](art/architecture_diagram.png)
+
+
 ## Assumptions
 
 In the behalf of readability and simplification, some assumptions have been made.
