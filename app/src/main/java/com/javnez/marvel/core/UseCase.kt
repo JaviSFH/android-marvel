@@ -19,7 +19,7 @@ abstract class UseCase<out Data, in Params> where Data : Any {
         onResult: (Result<Data>) -> Unit = {}
     ) {
         val job = scope.async(Dispatchers.IO) { run(params) }
-        GlobalScope.launch(Dispatchers.Main) { onResult(job.await()) }
+        scope.launch(Dispatchers.Main) { onResult(job.await()) }
     }
 
     class None
