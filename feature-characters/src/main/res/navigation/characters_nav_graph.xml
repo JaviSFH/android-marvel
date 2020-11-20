@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/characters_nav_graph"
+    app:startDestination="@id/overview_fragment">
+
+    <fragment
+        android:id="@+id/overview_fragment"
+        android:name="com.javnez.feature_characters.ui.overview.OverviewFragment"
+        android:label="overview_fragment"
+        tools:layout="@layout/overview_fragment">
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/details_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.javnez.feature_characters.ui.details.DetailsFragment"
+        android:label="details_fragment"
+        tools:layout="@layout/details_fragment">
+        <argument
+            android:name="character"
+            app:argType="com.javnez.core_data.model.character.Character" />
+    </fragment>
+</navigation>
