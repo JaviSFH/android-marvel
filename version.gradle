@@ -1,4 +1,10 @@
 ext {
+    // Build
+    compile_sdk_version = 30
+    build_tools_version = "30.0.2"
+    min_sdk_version = 21
+    target_sdk_version = 30
+
     // App
     material_version = "1.2.1"
     kotlin_version = "1.4.10"
