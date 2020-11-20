@@ -8,7 +8,7 @@
 
         <variable
             name="model"
-            type="com.javnez.marvel.data.model.character.Character"
+            type="com.javnez.core_data.model.character.Character"
             />
     </data>
 

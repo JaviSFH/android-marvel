@@ -1,9 +1,9 @@
 package com.javnez.marvel.domain.usecase
 
 import com.google.common.truth.Truth
-import com.javnez.marvel.core.Result
-import com.javnez.marvel.data.model.comic.Comic
-import com.javnez.marvel.data.repository.comics.ComicsRepository
+import com.javnez.core_data.core.Result
+import com.javnez.core_data.model.comic.Comic
+import com.javnez.core_data.repository.comics.ComicsRepository
 import com.javnez.marvel.domain.usecase.GetComicsUseCase.Params
 import io.mockk.coEvery
 import io.mockk.coVerify

@@ -1,10 +1,10 @@
 package com.javnez.marvel.domain.usecase
 
 import com.google.common.truth.Truth
-import com.javnez.marvel.core.Result
+import com.javnez.core_data.core.Result
 import com.javnez.marvel.core.UseCase.None
-import com.javnez.marvel.data.model.character.Character
-import com.javnez.marvel.data.repository.characters.CharactersRepository
+import com.javnez.core_data.model.character.Character
+import com.javnez.core_data.repository.characters.CharactersRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

@@ -26,6 +26,6 @@
         tools:layout="@layout/details_fragment">
         <argument
             android:name="character"
-            app:argType="com.javnez.marvel.data.model.character.Character" />
+            app:argType="com.javnez.core_data.model.character.Character" />
     </fragment>
 </navigation>

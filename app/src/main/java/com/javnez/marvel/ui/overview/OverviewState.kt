@@ -1,6 +1,6 @@
 package com.javnez.marvel.ui.overview
 
-import com.javnez.marvel.data.model.character.Character
+import com.javnez.core_data.model.character.Character
 
 sealed class OverviewState {
     object Loading : OverviewState()

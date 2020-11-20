@@ -17,7 +17,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.javnez.marvel.core.BaseFragment
-import com.javnez.marvel.data.model.character.Character
+import com.javnez.core_data.model.character.Character
 import com.javnez.marvel.databinding.DetailsFragmentBinding
 import com.javnez.marvel.ui.details.DetailsState.Error
 import com.javnez.marvel.ui.details.DetailsState.Loading

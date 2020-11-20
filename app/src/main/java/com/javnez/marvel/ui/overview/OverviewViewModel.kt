@@ -5,11 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.javnez.marvel.core.Failure
-import com.javnez.marvel.core.Result.Error
-import com.javnez.marvel.core.Result.Success
+import com.javnez.core_data.core.Failure
+import com.javnez.core_data.core.Result.Error
+import com.javnez.core_data.core.Result.Success
 import com.javnez.marvel.core.UseCase.None
-import com.javnez.marvel.data.model.character.Character
+import com.javnez.core_data.model.character.Character
 import com.javnez.marvel.domain.usecase.GetCharactersUseCase
 
 class OverviewViewModel @ViewModelInject constructor(private val getCharactersUseCase: GetCharactersUseCase) : ViewModel() {

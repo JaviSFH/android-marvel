@@ -5,9 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.javnez.marvel.core.Result.Error
-import com.javnez.marvel.core.Result.Success
-import com.javnez.marvel.data.model.comic.Comic
+import com.javnez.core_data.core.Result.Error
+import com.javnez.core_data.core.Result.Success
+import com.javnez.core_data.model.comic.Comic
 import com.javnez.marvel.domain.usecase.GetComicsUseCase
 import com.javnez.marvel.domain.usecase.GetComicsUseCase.Params
 

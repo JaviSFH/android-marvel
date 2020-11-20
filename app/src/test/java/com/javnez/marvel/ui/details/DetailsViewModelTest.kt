@@ -3,7 +3,7 @@ package com.javnez.marvel.ui.details
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.google.common.truth.Truth.assertThat
-import com.javnez.marvel.core.Result.Success
+import com.javnez.core_data.core.Result.Success
 import com.javnez.marvel.domain.usecase.GetComicsUseCase
 import com.javnez.marvel.domain.usecase.GetComicsUseCase.Params
 import io.mockk.coEvery
@@ -11,9 +11,7 @@ import io.mockk.mockk
 import io.mockk.slot
 import io.mockk.spyk
 import io.mockk.verify
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.TestCoroutineScope
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

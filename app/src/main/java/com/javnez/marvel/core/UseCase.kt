@@ -1,8 +1,8 @@
 package com.javnez.marvel.core
 
+import com.javnez.core_data.core.Result
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 

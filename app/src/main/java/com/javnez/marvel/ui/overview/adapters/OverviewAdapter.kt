@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.javnez.marvel.data.model.character.Character
+import com.javnez.core_data.model.character.Character
 import com.javnez.marvel.databinding.OverviewItemFragmentBinding
 import com.javnez.marvel.ui.overview.adapters.OverviewAdapter.CharacterViewHolder
 

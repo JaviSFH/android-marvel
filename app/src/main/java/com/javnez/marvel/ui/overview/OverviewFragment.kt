@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.javnez.marvel.core.BaseFragment
-import com.javnez.marvel.data.model.character.Character
+import com.javnez.core_data.model.character.Character
 import com.javnez.marvel.databinding.OverviewFragmentBinding
 import com.javnez.marvel.ui.overview.OverviewState.Error
 import com.javnez.marvel.ui.overview.OverviewState.Loading

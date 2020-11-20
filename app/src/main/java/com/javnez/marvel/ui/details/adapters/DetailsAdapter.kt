@@ -7,7 +7,7 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.javnez.marvel.data.model.comic.Comic
+import com.javnez.core_data.model.comic.Comic
 import com.javnez.marvel.databinding.DetailsItemFragmentBinding
 import com.javnez.marvel.ui.details.adapters.DetailsAdapter.ComicViewHolder
 
