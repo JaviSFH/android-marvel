@@ -33,10 +33,6 @@ At the present time there are two empty local data sources. These data sources a
 
 At the present time there is no implementation for infinite scrolling. It is pending to be done with [Jetpack's paging library](https://developer.android.com/topic/libraries/architecture/paging)
 
-#### Multi-module
-
-The pretended modularization would be "by feature", which would allow me to provide functionality dynamically through [Play Feature Delivery](https://developer.android.com/guide/app-bundle/play-feature-delivery). At the present time there's only one module (one feature). The idea is that I have more than one feature, hence more than one module, and some core modules which would hold the database logic as well as the common logic (base classes, shared extensions and utilities, etc.)
-
 ## License
 
     Copyright 2020 Javier Martínez
