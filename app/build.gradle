@@ -44,6 +44,9 @@ android {
 
 dependencies {
 
+    // App modules
+    implementation project (":core-data")
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Android dependencies
