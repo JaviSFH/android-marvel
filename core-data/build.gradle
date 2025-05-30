@@ -53,7 +53,7 @@ dependencies {
     // Test dependencies
     testImplementation "junit:junit:$junit_version"
     testImplementation "io.mockk:mockk:$mockk_version"
-    testImplementation "com.google.truth:truth:1.1"
+    testImplementation "com.google.truth:truth:1.4.2"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
-    testImplementation "android.arch.core:core-testing:$core_testing_version"
+    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
 }
